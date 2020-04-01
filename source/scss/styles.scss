@@ -1,6 +1,9 @@
-$primary-color: darkblue;
+$primary-color: #0C1011;
 
-.hello {
+body {
 	color: $primary-color;
 	background: $primary-color;
+	display: flex;
+	align-self: flex-start;
+	justify-content: flex-end;
 }
