@@ -1,0 +1,93 @@
+
+//Color Variables
+$primary-color: #0C1011;
+$secondary_color: #33658A;
+$third_color: #91F9E5;
+$black: #333645;
+$white: #fff;
+
+//Font Variables
+$primary_font: 'Raleway', sans-serif; //500 //800
+
+$browser-context: 14px;
+
+@function em($pixels, $context: $browser-context) {
+  @return ($pixels / $context) * 1em;
+}
+
+@mixin pseudo($left:false, $top:false, $right:false, $bottom:false, $z:false, $margin: auto){
+  content: '';
+  position: absolute;
+  display: block;
+  @if $left {left: $left};
+  @if $top {top: $top};
+  @if $right {right: $right};
+  @if $bottom {bottom: $bottom};
+  @if $z {z-index: $z};
+  margin: $margin;
+}
+
+.flex{
+  &-main{
+    display: flex;
+  }
+  &-wrap{
+    flex-wrap: wrap;
+  }
+  &-direction-column{
+    flex-direction: column;
+  }
+  &-direction-column-reverse{
+    flex-direction: column-reverse;
+  }
+  &-direction-row{
+    flex-direction: row;
+  }
+  &-direction-row-reverse{
+    flex-direction: row-reverse;
+  }
+}
+.align-items{
+  &-center{
+    align-items: center;
+  }
+  &-flex-start{
+    align-items: flex-start;
+  }
+  &-flex-end{
+    align-items: flex-end;
+  }
+}
+.justify-content{
+  &-center{
+    justify-content: center;
+  }
+  &-flex-start{
+    justify-content: flex-start;
+  }
+  &-flex-end{
+    justify-content: flex-end;
+  }
+  &-space-between{
+    justify-content: space-between;
+  }
+  &-space-around{
+    justify-content: space-around;
+  }
+}
+
+%animate{
+  transition: all 400ms ease-in-out;
+};
+
+%btn{
+  padding: 7px 20px;
+  background: $primary_color;
+  color: $white;
+  text-transform: uppercase;
+  text-align: center;
+  @extend %animate;
+  &:hover{
+    background: $black;
+  }
+}

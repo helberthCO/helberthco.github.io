@@ -1,0 +1,155 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body{
+  position: relative;
+  color: $black;
+  background: $primary-color;
+  width: 100vw;
+
+  font: {
+    family: $primary_font;
+    weight: 400;
+    size: $browser-context;
+  };
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+.btn{
+  @extend %btn;
+}
+
+.title {
+  color: $white;
+}
+
+.header {
+  &__left {
+    padding: 3vh 5vw;
+    justify-content: center;
+
+    img {
+      width: 50px;
+    }
+
+    span {
+      margin-left: em(10px);
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: em(1px);
+      font: {
+        size: em(22px);
+        weight: 800;
+      };
+    }
+  }
+}
+
+.main {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15vh;
+  margin: auto;
+
+  &__wrapper {
+    position: relative;
+
+    &::after,
+    &::before {
+      width: 70vw;
+      max-width: 500px;
+      height: 70vw;
+      max-height: 500px;
+      border-radius: 48%;
+    }
+
+    &::before {
+      @include pseudo($left: -3vw, $top: 0);
+      background: rgba($color: $black, $alpha: 0.5);
+    }
+
+    &::after {
+      @include pseudo($right: -8vw, $bottom: -5vh, $z: -1);
+      background: rgba($color: $secondary_color, $alpha: 0.1);
+    }
+  }
+
+  &__image {
+    width: 70vw;
+    max-width: 500px;
+    border-radius: 50%;
+    padding-top: 5vh;
+    padding-left: 5vw;
+    position: relative;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: em(2px);
+    margin-top: 4vh;
+    font: {
+      size: 11.5vw;
+    };
+
+    span {
+      display: block;
+      letter-spacing: em(4px);
+      font: {
+        size: 8vw;
+        weight: 300;
+      };
+    }
+  }
+}
+
+.social {
+  margin-top: 4vh;
+
+  li {
+    margin: 0 4vw;
+  }
+
+  i {
+    color: $white;
+    font-size: 7vw;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  background: $white;
+  height: 7vh;
+
+  &__link {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    height: 7vh;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+    text-transform: uppercase;
+    font-size: 4.5vw;
+
+    i {
+      margin-left: 2vw;
+    }
+  }
+}
