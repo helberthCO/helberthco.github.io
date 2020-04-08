@@ -1,0 +1,164 @@
+//Breakpoints
+$desktop: 1140;
+$tablet: 1280;
+$smartphone: 768;
+$small-smartphone: 480;
+
+//Media Queries
+@mixin screen($breakpoint) {
+  @if $breakpoint == large-desktop {
+    @media only screen and (min-device-width: #{$desktop}px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media only screen and (min-device-width: #{$tablet}px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen 
+    and (min-device-width: #{$smartphone}px) 
+    and (max-device-width: #{$tablet - 1}px) {
+      @content;
+    }
+  }  @else if $breakpoint == tablet-portrait {
+    @media only screen 
+    and (min-device-width: #{$smartphone}px) 
+    and (max-device-width: #{$tablet - 1}px)
+    and (orientation: portrait) {
+      @content;
+    }
+  }  @else if $breakpoint == tablet-landscape {
+    @media only screen 
+    and (min-device-width: #{$smartphone}px)
+    and (orientation: landscape) {
+      @content;
+    }
+  } @else if $breakpoint == smartphone {
+    @media only screen and (max-device-width: #{$smartphone - 1}px) and (-webkit-min-device-pixel-ratio: 3){
+      @content;
+    }
+  } @else if $breakpoint == small-smartphone {
+    @media only screen and (max-device-width: #{$small-smartphone}px) {
+      @content;
+    }
+  }
+}
+
+.header {
+  &__left {
+    @include screen(tablet-landscape) {
+      justify-content: flex-start;
+    }
+
+    span {
+      @include screen(smartphone) {
+        font-size: 6vw;
+      }
+    }
+  }
+}
+
+.main {
+  @include screen(tablet-landscape) {
+    flex-direction: row;
+    top: 22vh;
+    justify-content: space-around;
+    max-width: #{$tablet}px;
+  }
+
+  &__wrapper {
+    &::before, &::after {
+      @include screen(tablet-landscape) {
+        max-width: 400px;
+        max-height: 400px;
+      }
+    }
+  }
+
+  &__image {
+    @include screen(tablet-landscape) {
+      max-width: 400px;
+    }
+  }
+
+  &__title {
+    @include screen(tablet) {
+      font-size: 6vw;
+    }
+    @include screen(tablet-landscape) {
+      font-size: 5vw;
+      margin: 28vh 10vw 0 3vw;
+    }
+    @include screen(desktop) {
+      font-size: 4vw;
+    }
+  
+    span {
+      @include screen(tablet) {
+        font-size: 4.2vw;
+      }
+      @include screen(tablet-landscape) {
+        font-size: 3.5vw;
+      }
+      @include screen(desktop) {
+        font-size: 2.8vw;
+      }
+    }
+  }
+}
+
+.social {
+  @include screen(tablet-landscape) {
+    flex-direction: column;
+  }
+
+  li {
+    @include screen(tablet-landscape) {
+      margin: 2vh 0;
+    }
+  }
+
+  i {
+    @include screen(tablet) {
+      font-size: 5vw;
+    }
+    @include screen(tablet-landscape) {
+      font-size: em(50px);
+    }
+    @include screen(desktop) {
+      transition: all 400ms ease-in-out;
+    }
+
+    &:hover {
+      @include screen(desktop) {
+        color: $secondary_color;
+      }
+    }
+  }
+}
+
+.footer {
+  @include screen(desktop) {
+    background: $primary-color;
+  }
+
+  &__link {
+    @include screen(tablet) {
+      font-size: 3vw;
+    }
+    @include screen(tablet-landscape) {
+      font-size: 2vw;
+    }
+    @include screen(desktop) {
+      font-size: em(22px);
+      color: $white;
+      transition: all 400ms ease-in-out;
+    }
+
+    &:hover {
+      @include screen(desktop) {
+        color: $secondary_color;
+      }
+    }
+  }
+}
