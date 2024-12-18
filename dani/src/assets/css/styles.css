@@ -1,0 +1,25 @@
+:root {
+    --primary-color: #0C1011;
+    --primary-font: "Raleway", sans-serif;
+    --secondary-font: "Tangerine", cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    font-weight: 300;
+}
+.main {
+    padding: 5vw;
+}
+
+.title {
+    font-family: var(--secondary-font);
+}
+
+@media screen and (min-width: 601px) {
+    .main { padding: 2vw; }    
+}
