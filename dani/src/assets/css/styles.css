@@ -1,6 +1,7 @@
 :root {
     --white: #FFF;
     --primary-color: #0C1011;
+    --secondary-color: #C5322A;
     --primary-font: "Raleway", sans-serif;
     --secondary-font: "Tangerine", cursive;
     --box-shadow: rgba(12, 16, 17, 0.2) 0px 4px 16px, rgba(12, 16, 17, 0.1) 0px 8px 32px;
@@ -54,12 +55,17 @@ button {
 
 .title, .signature {
     font-family: var(--secondary-font);
-    font-size: 3.5rem;
+    font-size: 4rem;
     text-align: center;
+    color: var(--secondary-color);
 }
+
+.title { margin-left: -30px; }
 
 .signature {
     font-size: 3rem;
     text-align: left;
     margin-top: 1vh !important;
 }
+
+.bolded { font-weight: 500; }

@@ -25,6 +25,7 @@ const displayLetter = (letter) => {
 
         paragraphNode.textContent = letter.content[property];
         property === 'signature' && paragraphNode.classList.add('signature');
+        property === 'bolded' && paragraphNode.classList.add('bolded');
 
         appNode.appendChild(paragraphNode);
     }
