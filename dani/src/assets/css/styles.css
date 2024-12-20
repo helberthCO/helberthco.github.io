@@ -1,10 +1,13 @@
 :root {
+    --white: #FFF;
     --primary-color: #0C1011;
     --primary-font: "Raleway", sans-serif;
     --secondary-font: "Tangerine", cursive;
+    --box-shadow: rgba(12, 16, 17, 0.2) 0px 4px 16px, rgba(12, 16, 17, 0.1) 0px 8px 32px;
 }
 
 * {
+    font-size: 16px;
     margin: 0;
     padding: 0;
     border: 0;
@@ -12,14 +15,51 @@
     font-family: var(--primary-font);
     font-weight: 300;
 }
-.main {
+
+body {
+    overflow: hidden;
+    width: 90vw;
+    height: calc(100vh - 10vw);
+    margin: 5vw;
     padding: 5vw;
+    border-radius: 2vw;
+    box-sizing: border-box;
+    box-shadow: var(--box-shadow);
 }
 
-.title {
+.main {
+    height: 100%;
+    overflow: auto;
+}
+
+.no-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    padding: 3vw 6vw;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 2vw;
+    margin-top: 2vh;
+    box-shadow: var(--box-shadow);
+}
+
+.paragraph { line-height: 1.4rem; }
+.paragraph:not(:first-of-type) { margin-top: 2vh; }
+
+.title, .signature {
     font-family: var(--secondary-font);
+    font-size: 3.5rem;
+    text-align: center;
 }
 
-@media screen and (min-width: 601px) {
-    .main { padding: 2vw; }    
+.signature {
+    font-size: 3rem;
+    text-align: left;
+    margin-top: 1vh !important;
 }
