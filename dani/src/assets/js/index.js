@@ -3,7 +3,7 @@ const appNode = document.querySelector('.app');
 const headlineNode = document.createElement('h1');
 
 const currentDate = new Date;
-const conditions = currentDate.getFullYear() <= '2024' && currentDate.getMonth()+1 <= '12' && currentDate.getDate() <= '15';
+const conditions = currentDate.getFullYear() <= '2024' && currentDate.getMonth()+1 <= '12' && currentDate.getDate() <= '24';
 
 const getData = data => {
     fetch(letterData)
@@ -37,7 +37,7 @@ const notTimeYet = () => {
     const haedNote = 'Todavía no es tiempo...'
 
     buttonNode.setAttribute('onClick', `location.reload()`);
-    buttonNode.textContent = 'Recárgame el 24 a media noche.';
+    buttonNode.textContent = 'Recárgame el 24.';
     alertNode.classList.add('title');
     alertNode.textContent = haedNote;
 
