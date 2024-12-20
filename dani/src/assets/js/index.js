@@ -3,7 +3,7 @@ const appNode = document.querySelector('.app');
 const headlineNode = document.createElement('h1');
 
 const currentDate = new Date;
-const conditions = currentDate.getFullYear() <= '2024' && currentDate.getMonth()+1 <= '12' && currentDate.getDate() <= '14';
+const conditions = currentDate.getFullYear() <= '2024' && currentDate.getMonth()+1 <= '12' && currentDate.getDate() <= '24';
 
 const getData = data => {
     fetch(letterData)
