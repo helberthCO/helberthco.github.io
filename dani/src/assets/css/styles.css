@@ -20,7 +20,7 @@
 body {
     overflow: hidden;
     width: 90vw;
-    height: calc(100vh - 20vh);
+    height: calc(100vh - 15vh);
     margin: 5vw;
     padding: 5vw;
     border-radius: 2vw;
