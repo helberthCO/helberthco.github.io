@@ -46,7 +46,7 @@ button {
     padding: 3vw 6vw;
     font-size: 1rem;
     color: var(--white);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border-radius: 2vw;
     margin-top: 2vh;
     box-shadow: var(--box-shadow);
@@ -63,6 +63,12 @@ button {
 }
 
 .title { margin-left: -30px; }
+
+.no-time .title {
+    font-size: 3.4rem;
+    color: var(--primary-color);
+    margin-left: 0;
+}
 
 .signature {
     font-size: 3rem;
