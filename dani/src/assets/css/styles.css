@@ -31,6 +31,8 @@ body {
 .main {
     height: 100%;
     overflow: auto;
+    padding-bottom: 2vh;
+    box-sizing: border-box;
 }
 
 .no-time {
